@@ -10,6 +10,17 @@ import UIKit
 import AVFoundation
 
 extension PlaySoundsViewController {
+    
+    struct PlayingAlerts {
+        static let FileError = "Could not grab the file."
+        static let PlayingAudioFailed = "Could not start playing audio."
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .Default, handler: nil))
+        presentViewController(alert, animated: true, completion: nil)
+    }
 
     func setupAudio() {
         do {
@@ -19,6 +30,7 @@ extension PlaySoundsViewController {
             audioEngine.attachNode(audioPlayerNode)
         } catch {
             print("Cannot grab the file")
+            showAlert("Audio File Error", message: PlayingAlerts.FileError)
         }
     }
     
@@ -60,6 +72,7 @@ extension PlaySoundsViewController {
             audioPlayerNode.play()
         } catch {
             print("Cannot start playing audio!")
+            showAlert("Audio Error", message: PlayingAlerts.PlayingAudioFailed)
         }
     }
     

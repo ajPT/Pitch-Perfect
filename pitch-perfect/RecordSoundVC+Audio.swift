@@ -10,12 +10,6 @@ import UIKit
 import AVFoundation
 
 extension RecordSoundViewController {
-    
-    struct RecordingAlerts {
-        static let PermissionDenied = "Permission to record not granted."
-        static let RecordingFailed = "For some unknown reason your recording has failed."
-        static let InactiveSession = "For some unknown reason the audio session failed."
-    }
 
     func askUserPermissionToUseMicro() {
         let recordingSession = AVAudioSession.sharedInstance()
@@ -38,7 +32,7 @@ extension RecordSoundViewController {
     func permissionFailed() {
         self.recordBtn.enabled = false
         self.recordLbl.text = "Please ensure the app has access to your microphone."
-        showAlert("Permission Denied", message: RecordingAlerts.PermissionDenied)
+        Helper().showAlert(self, title: "Permission Denied", message: Helper.RecordingAlerts.PermissionDenied)
     }
     
     func getDocumentsDirectory() -> NSURL {
@@ -65,7 +59,7 @@ extension RecordSoundViewController {
             audioRecorder.record()
         } catch {
             print("recording failed!")
-            showAlert("Recording Failed", message: RecordingAlerts.RecordingFailed)
+            Helper().showAlert(self, title: "Recording Failed", message: Helper.RecordingAlerts.RecordingFailed)
         }
     }
     
@@ -76,14 +70,8 @@ extension RecordSoundViewController {
             try audioSession.setActive(false)
         } catch {
             print("Can't inactive audio session!")
-            showAlert("Audio Session", message: RecordingAlerts.InactiveSession)
+            Helper().showAlert(self, title: "Audio Session", message: Helper.RecordingAlerts.InactiveSession)
         }
-    }
-    
-    func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "Close", style: .Default, handler: nil))
-        presentViewController(alert, animated: true, completion: nil)
     }
     
 }

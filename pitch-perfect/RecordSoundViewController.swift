@@ -21,7 +21,6 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         askUserPermissionToUseMicro()
-        self.navigationController?.navigationBar.barTintColor=UIColor.grayColor()
         self.navigationController?.navigationBar.tintColor = UIColor(red: 54.0/255.0, green: 54.0/255.0, blue: 54.0/255.0, alpha: 1.0)
     }
     

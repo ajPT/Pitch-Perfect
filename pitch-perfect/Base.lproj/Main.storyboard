@@ -50,7 +50,6 @@
                                         <state key="normal" image="stop"/>
                                         <connections>
                                             <action selector="onStopRecPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hdO-9O-xGX"/>
-                                            <segue destination="ybg-jE-ZYu" kind="show" id="gXt-dA-Ac7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -67,6 +66,7 @@
                         <outlet property="recordBtn" destination="b2D-dX-Rr8" id="XzX-SG-zLi"/>
                         <outlet property="recordLbl" destination="ncz-B1-is4" id="lp3-Kn-jYV"/>
                         <outlet property="stopRecBtn" destination="VtT-GW-ale" id="RbP-sc-aYC"/>
+                        <segue destination="ybg-jE-ZYu" kind="show" identifier="openPlaySoundsView" id="YUb-MG-SEp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -113,14 +113,23 @@
                                                                 <include reference="qx1-1x-f6G"/>
                                                             </mask>
                                                         </variation>
+                                                        <connections>
+                                                            <action selector="onSlowPressed:" destination="ybg-jE-ZYu" eventType="touchUpInside" id="gpe-E6-a6U"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33G-qc-U3k">
                                                         <rect key="frame" x="158" y="80" width="100" height="100"/>
                                                         <state key="normal" image="fast"/>
+                                                        <connections>
+                                                            <action selector="onFastPressed:" destination="ybg-jE-ZYu" eventType="touchUpInside" id="bQR-yk-U0Z"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPA-2F-DnZ">
                                                         <rect key="frame" x="288" y="20" width="100" height="220"/>
                                                         <state key="normal" image="chipmunk"/>
+                                                        <connections>
+                                                            <action selector="onChipmunkPressed:" destination="ybg-jE-ZYu" eventType="touchUpInside" id="SsX-E1-tPF"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -147,6 +156,9 @@
                                                                 <include reference="xJ7-gq-p2v"/>
                                                             </mask>
                                                         </variation>
+                                                        <connections>
+                                                            <action selector="onDarthVaderPressed:" destination="ybg-jE-ZYu" eventType="touchUpInside" id="kkm-oZ-f41"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsk-mj-sFa">
                                                         <rect key="frame" x="145" y="20" width="100" height="100"/>
@@ -154,6 +166,9 @@
                                                         <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                                             <rect key="frame" x="123" y="0.0" width="94" height="88"/>
                                                         </variation>
+                                                        <connections>
+                                                            <action selector="onEchoPressed:" destination="ybg-jE-ZYu" eventType="touchUpInside" id="j9q-dX-57R"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqQ-OM-UQA">
                                                         <rect key="frame" x="275" y="31" width="100" height="100"/>
@@ -161,6 +176,9 @@
                                                         <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                                             <rect key="frame" x="247" y="0.0" width="93" height="88"/>
                                                         </variation>
+                                                        <connections>
+                                                            <action selector="onReverbPressed:" destination="ybg-jE-ZYu" eventType="touchUpInside" id="7et-X7-Ktr"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -195,6 +213,9 @@
                                                 <include reference="kZo-9Z-pDc"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="onStopPressed:" destination="ybg-jE-ZYu" eventType="touchUpInside" id="B9d-zA-VUN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -223,14 +244,23 @@
                                                                 <include reference="40t-Gs-mBo"/>
                                                             </mask>
                                                         </variation>
+                                                        <connections>
+                                                            <action selector="onSlowPressed:" destination="ybg-jE-ZYu" eventType="touchUpInside" id="dUd-Qb-FdG"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHu-Ji-zKK">
                                                         <rect key="frame" x="0.0" y="120" width="100" height="100"/>
                                                         <state key="normal" image="chipmunk"/>
+                                                        <connections>
+                                                            <action selector="onChipmunkPressed:" destination="ybg-jE-ZYu" eventType="touchUpInside" id="KNv-dM-RUD"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCn-BT-iqB">
                                                         <rect key="frame" x="0.0" y="240" width="100" height="100"/>
                                                         <state key="normal" image="echo"/>
+                                                        <connections>
+                                                            <action selector="onEchoPressed:" destination="ybg-jE-ZYu" eventType="touchUpInside" id="cjR-3t-6Np"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -253,14 +283,23 @@
                                                                 <include reference="5Ge-lZ-UoI"/>
                                                             </mask>
                                                         </variation>
+                                                        <connections>
+                                                            <action selector="onFastPressed:" destination="ybg-jE-ZYu" eventType="touchUpInside" id="e8t-KT-jzj"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5w-lt-mlS">
                                                         <rect key="frame" x="0.0" y="120" width="100" height="100"/>
                                                         <state key="normal" image="darthvader"/>
+                                                        <connections>
+                                                            <action selector="onDarthVaderPressed:" destination="ybg-jE-ZYu" eventType="touchUpInside" id="TO2-fG-fPY"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRd-3w-Gfs">
                                                         <rect key="frame" x="0.0" y="240" width="100" height="100"/>
                                                         <state key="normal" image="reverb"/>
+                                                        <connections>
+                                                            <action selector="onReverbPressed:" destination="ybg-jE-ZYu" eventType="touchUpInside" id="6pY-bE-ATd"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -288,6 +327,9 @@
                                                         <include reference="bxT-wn-hw3"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="onStopPressed:" destination="ybg-jE-ZYu" eventType="touchUpInside" id="qhT-F7-Kph"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>

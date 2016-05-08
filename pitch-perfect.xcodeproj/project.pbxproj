@@ -16,6 +16,7 @@
 		E01C3F971CDE2CFF00937FD7 /* PlaySoundsVC+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01C3F961CDE2CFF00937FD7 /* PlaySoundsVC+Audio.swift */; };
 		E01C3F991CDE35D000937FD7 /* RecordSoundVC+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01C3F981CDE35D000937FD7 /* RecordSoundVC+Audio.swift */; };
 		E01C3F9D1CDE416800937FD7 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01C3F9C1CDE416800937FD7 /* Helper.swift */; };
+		E01FA5131CDF5C6F00F58E28 /* SketchRockwell-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E01FA5121CDF5C6F00F58E28 /* SketchRockwell-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E01C3F961CDE2CFF00937FD7 /* PlaySoundsVC+Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaySoundsVC+Audio.swift"; sourceTree = "<group>"; };
 		E01C3F981CDE35D000937FD7 /* RecordSoundVC+Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecordSoundVC+Audio.swift"; sourceTree = "<group>"; };
 		E01C3F9C1CDE416800937FD7 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		E01FA5121CDF5C6F00F58E28 /* SketchRockwell-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SketchRockwell-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				E01C3F961CDE2CFF00937FD7 /* PlaySoundsVC+Audio.swift */,
 				E01C3F981CDE35D000937FD7 /* RecordSoundVC+Audio.swift */,
 				E01C3F9C1CDE416800937FD7 /* Helper.swift */,
+				E01FA5121CDF5C6F00F58E28 /* SketchRockwell-Bold.ttf */,
 			);
 			path = "pitch-perfect";
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E01C3F8B1CD4F27E00937FD7 /* LaunchScreen.storyboard in Resources */,
+				E01FA5131CDF5C6F00F58E28 /* SketchRockwell-Bold.ttf in Resources */,
 				E01C3F881CD4F27E00937FD7 /* Assets.xcassets in Resources */,
 				E01C3F861CD4F27E00937FD7 /* Main.storyboard in Resources */,
 			);

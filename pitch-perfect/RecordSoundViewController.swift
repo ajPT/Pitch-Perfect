@@ -13,7 +13,9 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     
     var audioRecorder: AVAudioRecorder!
     var recordingSession: AVAudioSession!
-
+    var timer: NSTimer!
+    var counter = 0
+    
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var recordLbl: UILabel!
     @IBOutlet weak var stopRecBtn: UIButton!
@@ -24,7 +26,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         self.navigationController?.navigationBar.tintColor = UIColor(red: 54.0/255.0, green: 54.0/255.0, blue: 54.0/255.0, alpha: 1.0)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         recordBtn.enabled = true
         stopRecBtn.enabled = false
         recordLbl.text = "Tap to record"
@@ -33,12 +35,13 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     @IBAction func onRecordPressed(sender: UIButton!) {
         recordBtn.enabled = false
         stopRecBtn.enabled = true
-        recordLbl.text = "Recording in progress"
+        startTimer()
         setupAndRunRecorder()
     }
     
     @IBAction func onStopRecPressed(sender: AnyObject) {
         stopRecording()
+        stopTimer()
     }
 
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {

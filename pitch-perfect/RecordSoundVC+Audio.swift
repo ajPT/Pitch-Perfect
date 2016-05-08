@@ -11,6 +11,7 @@ import AVFoundation
 
 extension RecordSoundViewController {
 
+    //PERMISSION
     func askUserPermissionToUseMicro() {
         let recordingSession = AVAudioSession.sharedInstance()
         
@@ -35,6 +36,7 @@ extension RecordSoundViewController {
         Helper().showAlert(self, title: "Permission Denied", message: Helper.RecordingAlerts.PermissionDenied)
     }
     
+    //UTILS
     func getDocumentsDirectory() -> NSURL {
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true)[0] as String
         let recordingName = "recordedVoice.m4a"
@@ -44,6 +46,7 @@ extension RecordSoundViewController {
         return filePath!
     }
     
+    //RECORDER
     func setupAndRunRecorder() {
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -72,6 +75,31 @@ extension RecordSoundViewController {
             print("Can't inactive audio session!")
             Helper().showAlert(self, title: "Audio Session", message: Helper.RecordingAlerts.InactiveSession)
         }
+    }
+    
+    //TIMER
+    func startTimer() {
+        stopTimer()
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(RecordSoundViewController.timerAction), userInfo: nil, repeats: true)
+    }
+    
+    func timerAction() {
+        counter += 1
+        recordLbl.text = "Recording time: \(retrieveTimeFromCounter(counter))"
+    }
+    
+    func stopTimer() {
+        if timer != nil {
+            timer.invalidate()
+        }
+        counter = 0
+    }
+    
+    func retrieveTimeFromCounter(counter: Int) -> String {
+        let seconds = counter % 60
+        let minutes = (counter / 60) % 60
+        let hours = (counter / 3600)
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
     
 }

@@ -20,31 +20,23 @@ class PlaySoundsViewController: UIViewController {
         super.viewDidLoad()
         setupAudio()
     }
+    
+    @IBAction func playSoundEffect(sender: UIButton) {
+        if sender.tag == 0 {
+            playSound(rate: 0.5)
+        } else if sender.tag == 1 {
+            playSound(rate: 1.5)
+        } else if sender.tag == 2 {
+            playSound(pitch: 1000)
+        } else if sender.tag == 3 {
+            playSound(pitch: -1000)
+        } else if sender.tag == 4 {
+            playSound(echo: true)
+        } else if sender.tag == 5 {
+            playSound(reverb: true)
+        }
+    }
 
-    @IBAction func onSlowPressed(sender: AnyObject) {
-        playSound(rate: 0.5)
-    }
-    
-    @IBAction func onFastPressed(sender: AnyObject) {
-        playSound(rate: 1.5)
-    }
-    
-    @IBAction func onChipmunkPressed(sender: AnyObject) {
-        playSound(pitch: 1000)
-    }
-    
-    @IBAction func onDarthVaderPressed(sender: AnyObject) {
-        playSound(pitch: -1000)
-    }
-    
-    @IBAction func onEchoPressed(sender: AnyObject) {
-        playSound(echo: true)
-    }
-    
-    @IBAction func onReverbPressed(sender: AnyObject) {
-        playSound(reverb: true)
-    }
-    
     @IBAction func onStopPressed(sender: AnyObject) {
         stopAudio()
     }
